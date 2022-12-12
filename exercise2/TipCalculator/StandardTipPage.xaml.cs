@@ -27,24 +27,14 @@ public partial class StandardTipPage : ContentPage
 
     void OnLight(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorSilver;
-
-        tipLabel.TextColor = colorNavy;
-        billLabel.TextColor = colorNavy;
-        totalLabel.TextColor = colorNavy;
-        tipOutput.TextColor = colorNavy;
-        totalOutput.TextColor = colorNavy;
+        this.Resources["fgColor"] = Color.FromHex("#0000AD");
+        this.Resources["bgColor"] = Color.FromHex("#C0C0C0"); 
     }
 
     void OnDark(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorNavy;
-
-        tipLabel.TextColor = colorSilver;
-        billLabel.TextColor = colorSilver;
-        totalLabel.TextColor = colorSilver;
-        tipOutput.TextColor = colorSilver;
-        totalOutput.TextColor = colorSilver;
+        this.Resources["bgColor"] = colorNavy;
+        this.Resources["fgColor"] = colorSilver;
     }
 
     async void GotoCustom(object sender, EventArgs e)

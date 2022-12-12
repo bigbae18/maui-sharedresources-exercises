@@ -9,6 +9,24 @@
                 <ResourceDictionary Source="Resources/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="bgColor">#C0C0C0</Color>
+            <Color x:Key="fgColor">#0000AD</Color>
+            <x:Double x:Key="fontSize">22</x:Double>
+
+            <Style x:Key="Container" TargetType="Grid">
+                <Setter Property="ColumnDefinitions" Value="*, 3*" />
+                <Setter Property="RowDefinitions" Value="Auto, Auto, Auto, Auto, *" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource bgColor}" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            <Style x:Key="BottomLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource fontSize}"/>
+                <Setter Property="TextColor" Value="{DynamicResource fgColor}" />
+            </Style>
+            <Style x:Key="TopLabels" BasedOn="BottomLabels" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
